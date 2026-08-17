@@ -8,15 +8,16 @@ single headline number.
 
 ## TL;DR
 
-Three attempts, one genuinely promising result — but even the best one falls short of a clean
-"holds up" verdict once tested rigorously enough.
+Four attempts, one strategy that meaningfully strengthened after a targeted improvement — but even
+the best version falls short of a clean "holds up" verdict once tested rigorously enough.
 
 | Round | Strategy | In-sample Sharpe | Out-of-sample Sharpe | Verdict |
 |---|---|---|---|---|
 | 1 | TSMOM on FX futures (Pollok & Robik 2026, [arXiv:2607.00475](https://arxiv.org/abs/2607.00475)) | — | 0.12, p=0.65; **-0.71** on fresh 2025-26 holdout | DOES NOT HOLD UP |
 | 2 | G10 FX carry, tercile sort | 0.14, p=0.62 | 0.23, p=0.56 | DOES NOT HOLD UP |
 | 2 | Carry+Value+Momentum blend, G10 | -0.08, p=0.78 | 0.08, p=0.84 | DOES NOT HOLD UP |
-| 2 | **Broad DM+EM carry, quintile sort, 25 currencies** | 0.25, p=0.37 | **0.68, p=0.089** | **PARTIALLY HOLDS UP** |
+| 2 | Broad DM+EM carry, quintile sort, 25 currencies | 0.25, p=0.37 (HAC p=0.31) | 0.68, p=0.089 (HAC p=0.074) | PARTIALLY HOLDS UP |
+| 2 | **Vol/ambiguity-regime-conditioned version of the above** | **0.67, p=0.019 (HAC p=0.013)** | **0.89, p=0.027 (HAC p=0.015)** | **PARTIALLY HOLDS UP (strongest result)** |
 
 ## The strongest candidate: broad DM+EM carry
 
