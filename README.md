@@ -54,9 +54,43 @@ Based on the effect documented in:
   undercuts a "stable throughout" reading.
 - Plain two-sided significance (p=0.089) doesn't clear the conventional 5% threshold.
 
-**Verdict: PARTIALLY HOLDS UP.** The most literature-consistent, mechanism-sound, cost-robust result
-across everything tested (12 attempts across equities, crypto/vol, and macro/FX domains) — but by the
-most rigorous statistical standard, still short of a demonstrated edge.
+**Verdict on attempt 3: PARTIALLY HOLDS UP**, but the Newey-West/HAC test — the most conservative,
+appropriate estimator for autocorrelated monthly returns — fails it (p≈0.48).
+
+## Attempt 4: does regime-conditioning fix it?
+
+Asano-Cai-Sakemoto (2025)'s actual contribution isn't plain carry — it's conditioning carry exposure
+on FX volatility/ambiguity regimes to sidestep carry-crash drawdowns. Attempt 3 only tested the
+unconditional version. Attempt 4 builds a free-data volatility/ambiguity regime measure (cross-
+sectional realized-vol and vol-dispersion across the same 25-currency universe), calibrates a
+scale-down-in-high-vol-regimes rule **in-sample only**, freezes it, and re-runs the identical
+attempt-3 base strategy underneath it.
+
+**Result: the conditioning meaningfully strengthens the case.**
+
+| Metric | Attempt 3 IS | Attempt 4 IS | Attempt 3 OOS | Attempt 4 OOS |
+|---|---|---|---|---|
+| Sharpe | 0.25 | **0.67** | 0.68 | **0.89** |
+| Plain p-value | 0.37 | **0.019** | 0.089 | **0.027** |
+| HAC/Newey-West p-value | 0.31 | **0.013** | 0.074 | **0.015** |
+| Max drawdown | -10.5% | -5.0% | -7.0% | -3.8% |
+
+The HAC test that killed attempt 3 now passes cleanly in both periods. Subperiod stability also
+improved: the previously flat/negative 2019–early-2021 window (Sharpe ≈ -0.05) flipped to +0.41.
+
+**But an honesty check keeps this from being a clean win.** The regime overlay correctly went flat
+for the March 2020 COVID crash (dodging a -4.76% month), but **missed** the August 2024 JPY-carry
+unwind entirely — taking the identical -2.41% hit attempt 3 took. Excluding *both* known crash months
+from the OOS window, unconditional carry (Sharpe 1.16) actually edges out the conditioned version
+(Sharpe 1.06) — meaning a real share of attempt 4's improvement traces to one correctly-dodged
+historical event rather than a uniformly better strategy in ordinary months. It's not purely a
+one-month artifact (IS significance improved too, across 152 months not dominated by any single
+crash), but it's a 1-for-2 crash detector, not a proven one.
+
+**Verdict: PARTIALLY HOLDS UP — the strongest result across everything tested (13 attempts across
+equities, crypto/vol, and macro/FX domains), and the first to clear formal HAC significance.** Still
+not "HOLDS UP": a crash-avoidance mechanism that's caught one of two known events needs more
+out-of-sample crashes before its timing skill can be trusted rather than attributed to luck.
 
 ## Layout
 
@@ -64,8 +98,9 @@ most rigorous statistical standard, still short of a demonstrated edge.
 round1/paper-c-macro-fx-rates/                        TSMOM replication (round 1)
 round2/attempt-1-fx-carry-tercile/                     G10 carry, tercile sort
 round2/attempt-2-carry-value-momentum-blend/           Combined signal, G10
-round2/attempt-3-broad-dm-em-carry/                    Broad 25ccy carry (strongest result)
-round2/attempt-3-broad-dm-em-carry/robustness/         Deep-dive robustness checks
+round2/attempt-3-broad-dm-em-carry/                    Broad 25ccy carry (unconditional)
+round2/attempt-3-broad-dm-em-carry/robustness/         Deep-dive robustness checks on attempt 3
+round2/attempt-4-vol-conditioned-carry/                Vol/ambiguity-regime-conditioned version (strongest result)
 round2/SUMMARY.md                                       Cross-attempt summary
 ```
 
