@@ -131,11 +131,11 @@ caveats, and reproduction steps.
 
 ## Reproduction
 
-Each attempt folder is independently runnable:
+Each attempt folder is independently runnable, e.g.:
 
 ```
-cd round2/attempt-3-broad-dm-em-carry
-python3 broad_carry_backtest.py
+cd round2/attempt-4-vol-conditioned-carry
+python3 vol_conditioned_carry_backtest.py
 ```
 
 Requires: `yfinance`, `dbnomics`, `pandas`, `numpy`, `scipy`, `matplotlib`, `statsmodels`. Internet
