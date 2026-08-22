@@ -21,14 +21,8 @@ the best version falls short of a clean "holds up" verdict once tested rigorousl
 
 ## The strongest candidate: broad DM+EM carry
 
-Based on the effect documented in:
-- Lustig, H., Verdelhan, A. (2007). "The Cross Section of Foreign Currency Risk Premia and
-  Consumption Growth Risk." *American Economic Review*, 97(1), 89–117.
-- Menkhoff, L., Sarno, L., Schmeling, M., Schrimpf, A. (2012). "Carry Trades and Global Foreign
-  Exchange Volatility." *Journal of Finance*, 67(2), 681–718.
-- Asano, T., Cai, X., Sakemoto, R. (2025). "Global Foreign Exchange Volatility, Ambiguity, and
-  Currency Carry Trades." *Journal of Banking & Finance*, 178 (SSRN preprint 4993938) — the recent
-  paper that motivated re-testing this now.
+Based on the effect documented in Lustig & Verdelhan (2007), Menkhoff et al. (2012), and Asano, Cai
+& Sakemoto (2025) — see [Sources](#sources) below for full citations and links.
 
 **What's genuinely encouraging:**
 - Out-of-sample Sharpe (0.68) exceeds in-sample (0.25) — the opposite of the "looks good in-sample,
