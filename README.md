@@ -102,6 +102,46 @@ Each attempt folder contains: paper citation(s), exact methodology as implemente
 substitutions flagged), data sources/date ranges, full IS vs OOS results table, a VERDICT line,
 caveats, and reproduction steps.
 
+## Sources
+
+Papers cited across the attempts in this repo, with links to a freely-accessible version of each
+(SSRN/NBER preprint, author-hosted PDF, or arXiv — not the paywalled journal typeset version where
+one exists):
+
+- Lustig, H., Verdelhan, A. (2007). "The Cross Section of Foreign Currency Risk Premia and
+  Consumption Growth Risk." *American Economic Review*, 97(1), 89–117.
+  [NBER working paper](https://www.nber.org/papers/w11104) · [author PDF](https://web.mit.edu/adrienv/www/FX_Xsection.pdf)
+- Menkhoff, L., Sarno, L., Schmeling, M., Schrimpf, A. (2012). "Carry Trades and Global Foreign
+  Exchange Volatility." *Journal of Finance*, 67(2), 681–718.
+  [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1342968) · [open-access PDF](https://openaccess.city.ac.uk/id/eprint/3391/1/CTVOL_R3_v4_paper.pdf)
+- Menkhoff, L., Sarno, L., Schmeling, M., Schrimpf, A. (2012). "Currency Momentum Strategies."
+  *Journal of Financial Economics*, 106(3), 660–684.
+  [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1988679)
+- Menkhoff, L., Sarno, L., Schmeling, M., Schrimpf, A. (2017). "Currency Value." *Review of
+  Financial Studies*, 30(2), 416–441.
+  [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2492082)
+- Asness, C., Moskowitz, T., Pedersen, L. H. (2013). "Value and Momentum Everywhere." *Journal of
+  Finance*, 68(3), 929–985.
+  [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2174501) · [author PDF](https://pages.stern.nyu.edu/~lpederse/papers/ValMomEverywhere.pdf)
+- Asano, T., Cai, X., Sakemoto, R. (2025). "Global Foreign Exchange Volatility, Ambiguity, and
+  Currency Carry Trades." *Journal of Banking & Finance*, 178. The recent paper that motivated
+  re-testing carry-with-conditioning in attempt 4.
+  [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4993938)
+- Chernov, M., Dahlquist, M., Lochstoer, L. A. (2024). "Reassessing Sources of Risk Premiums in
+  Currency Markets." Cited in attempts 1–2 as evidence carry is an actively re-tested effect, not a
+  stale finding.
+  [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4802331) · [NBER working paper](https://www.nber.org/system/files/working_papers/w32900/w32900.pdf)
+- Hsu, P.-H., Taylor, M. P., Wang, Z. (2020, published 2024 with Li, Y.). "The Out-of-Sample
+  Performance of Carry Trades." *Journal of International Money and Finance*, 143. Cited in
+  attempt 1 as a skeptical counterpoint — finds carry strategies chosen as "best" in-sample largely
+  fail to repeat out-of-sample once data-snooping bias is corrected for; used here as a caution
+  against over-tuning, not as license to keep adjusting parameters against OOS results.
+  [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3661395)
+- Pollok, A., Robik, K. (2026). "End-to-End Parametric Portfolio Policies for Cross-Asset Futures
+  Timing: When Do AI Models Beat Simple Rules?" The round-1 paper whose FX/TSMOM claim is replicated
+  and found not to hold up.
+  [arXiv:2607.00475](https://arxiv.org/abs/2607.00475)
+
 ## Data sources
 
 - FX spot: [yfinance](https://github.com/ranaroussi/yfinance) (free, no key)
