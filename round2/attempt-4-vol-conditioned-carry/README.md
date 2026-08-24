@@ -2,13 +2,26 @@
 
 ## Motivation
 
-Attempt 3 tested the *plain, unconditional* broad (DM+EM) carry sort. The paper that actually
-motivated re-testing carry in this audit — Asano, Cai, Sakemoto (2025), "Global Foreign Exchange
-Volatility, Ambiguity, and Currency Carry Trades," *Journal of Banking & Finance* 178 (SSRN preprint
-4993938) — is not about plain carry. Its contribution is conditioning carry exposure on FX
-volatility/ambiguity regimes to avoid carry-crash drawdowns. This attempt implements that
-mechanism on top of attempt 3's exact frozen base strategy (same universe, signal, quintile sort,
-cost assumption, IS/OOS split — nothing about the base strategy was changed or re-tuned).
+Attempt 3 tested the *plain, unconditional* broad (DM+EM) carry sort. Asano, Cai, Sakemoto (2025),
+"Global Foreign Exchange Volatility, Ambiguity, and Currency Carry Trades," *Journal of Banking &
+Finance* 178 (SSRN preprint 4993938) — the paper that motivated re-testing carry in this audit — is
+not about plain carry; its contribution is conditioning carry on FX volatility/ambiguity regimes.
+This attempt builds a general vol/ambiguity-regime overlay **inspired by** that idea and layers it on
+top of attempt 3's exact frozen base strategy (same universe, signal, quintile sort, cost assumption,
+IS/OOS split — nothing about the base strategy was changed or re-tuned).
+
+**Important attribution caveat, added after a follow-up literature check:** secondary summaries of
+ACS (2025) indicate their actual finding is more specific and more counterintuitive than "reduce
+carry exposure when things look uncertain" — they report that *high* FX ambiguity is associated with
+*higher* carry returns, because high ambiguity is when investors hold off unwinding positions even as
+volatility rises; it is *low*-ambiguity, high-volatility states that they associate with carry
+unwinds. This attempt's rule does the opposite of that: it goes **flat during high measured
+ambiguity/dispersion**. That may mean this overlay's exposure rule runs in the opposite direction
+from ACS's actual documented mechanism, even though it uses a similarly-constructed regime measure.
+We have not verified this against ACS's full text directly (only via secondary summaries), so treat
+this as a specific, named open question rather than a settled critique — but it means this attempt
+should be read as "a vol/ambiguity-timing overlay in the spirit of the literature," not as a faithful
+implementation of ACS's specific mechanism.
 
 Attempt 3's robustness deep-dive found two specific weaknesses this is meant to address: subperiod
 instability (the entire OOS Sharpe came from 2022–2024; 2019–early 2021 including COVID was flat to
