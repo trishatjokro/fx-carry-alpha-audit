@@ -106,6 +106,12 @@ single historical event.
 
 ## Caveats
 
+- **Attribution/direction uncertainty (see Motivation above)**: this overlay goes flat when its
+  ambiguity-dispersion measure is elevated. Secondary summaries of Asano-Cai-Sakemoto (2025) suggest
+  their finding runs the other way — high ambiguity associated with *higher*, not lower, carry
+  returns. We have not confirmed this against ACS's full text. Read this attempt as a
+  literature-inspired vol/ambiguity-timing overlay, not a verified replication of ACS's specific
+  mechanism.
 - Same base-strategy caveats as attempt 3 (25-currency universe smaller than academic samples,
   policy-rate proxy for forward discount, uniform DM/EM transaction cost assumption).
 - Realized-vol dispersion from free daily spot data, not implied vol/options-based ambiguity as in
