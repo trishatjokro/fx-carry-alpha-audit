@@ -57,10 +57,12 @@ Asano-Cai-Sakemoto (2025)'s actual contribution isn't plain carry — it's condi
 on FX volatility/ambiguity regimes. Attempt 3 only tested the unconditional version. Attempt 4 builds
 a free-data volatility/ambiguity-dispersion regime measure (cross-sectional realized-vol and
 vol-dispersion across the same 25-currency universe) **in the spirit of** that idea — see attempt 4's
-own README for an important caveat: secondary summaries of ACS suggest their finding runs in the
-opposite direction from this overlay's rule (they associate *high* ambiguity with *higher* carry
-returns, not a signal to reduce exposure), which we have not verified against their full text.
-Attempt 4 calibrates a
+own README for a confirmed attribution correction: two independent secondary academic sources
+indicate ACS's actual finding runs in the opposite direction from this overlay's rule (they associate
+*high* ambiguity with *higher*, not lower, carry returns, via an interaction where ambiguity
+suppresses unwind risk during volatile periods). Attempt 4's overlay is therefore best read as an
+independently-motivated timing rule that performs well empirically here, not a validated
+implementation of ACS's mechanism. Attempt 4 calibrates a
 scale-down-in-high-vol-regimes rule **in-sample only**, freezes it, and re-runs the identical
 attempt-3 base strategy underneath it.
 
