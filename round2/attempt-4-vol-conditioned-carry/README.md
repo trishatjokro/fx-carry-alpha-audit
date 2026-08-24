@@ -39,10 +39,9 @@ plain t-test (p=0.089).
 - **Regime measure**: cross-sectional dispersion (std across the 25 currencies) of each currency's
   trailing 21-trading-day realized annualized volatility, computed at each month-end using only data
   up to that point (no look-ahead). This is a dispersion-based "ambiguity-style" proxy — high
-  dispersion means currencies disagree about the current vol regime — closer in spirit to an
-  ambiguity measure than raw vol level, though see the attribution caveat above: whether *this
-  direction* of conditioning (exposure down when dispersion is high) matches what ACS (2025)
-  themselves found is an open question, not verified against their full text.
+  dispersion means currencies disagree about the current vol regime. As confirmed above, this
+  overlay reduces exposure exactly when this measure is elevated — the opposite direction from ACS
+  (2025)'s documented interaction between ambiguity and carry returns.
 - **Threshold**: 67th percentile (top-tercile cutoff) of this measure, calibrated **only on the
   in-sample window** (2006-05 to 2018-12), then **frozen** and applied mechanically, unchanged, to
   the out-of-sample window. No re-estimation, no threshold search on OOS data. This is a single,
