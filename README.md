@@ -54,9 +54,13 @@ appropriate estimator for autocorrelated monthly returns — fails it (p≈0.48)
 ## Attempt 4: does regime-conditioning fix it?
 
 Asano-Cai-Sakemoto (2025)'s actual contribution isn't plain carry — it's conditioning carry exposure
-on FX volatility/ambiguity regimes to sidestep carry-crash drawdowns. Attempt 3 only tested the
-unconditional version. Attempt 4 builds a free-data volatility/ambiguity regime measure (cross-
-sectional realized-vol and vol-dispersion across the same 25-currency universe), calibrates a
+on FX volatility/ambiguity regimes. Attempt 3 only tested the unconditional version. Attempt 4 builds
+a free-data volatility/ambiguity-dispersion regime measure (cross-sectional realized-vol and
+vol-dispersion across the same 25-currency universe) **in the spirit of** that idea — see attempt 4's
+own README for an important caveat: secondary summaries of ACS suggest their finding runs in the
+opposite direction from this overlay's rule (they associate *high* ambiguity with *higher* carry
+returns, not a signal to reduce exposure), which we have not verified against their full text.
+Attempt 4 calibrates a
 scale-down-in-high-vol-regimes rule **in-sample only**, freezes it, and re-runs the identical
 attempt-3 base strategy underneath it.
 
