@@ -10,18 +10,24 @@ This attempt builds a general vol/ambiguity-regime overlay **inspired by** that 
 top of attempt 3's exact frozen base strategy (same universe, signal, quintile sort, cost assumption,
 IS/OOS split — nothing about the base strategy was changed or re-tuned).
 
-**Important attribution caveat, added after a follow-up literature check:** secondary summaries of
-ACS (2025) indicate their actual finding is more specific and more counterintuitive than "reduce
-carry exposure when things look uncertain" — they report that *high* FX ambiguity is associated with
-*higher* carry returns, because high ambiguity is when investors hold off unwinding positions even as
-volatility rises; it is *low*-ambiguity, high-volatility states that they associate with carry
-unwinds. This attempt's rule does the opposite of that: it goes **flat during high measured
-ambiguity/dispersion**. That may mean this overlay's exposure rule runs in the opposite direction
-from ACS's actual documented mechanism, even though it uses a similarly-constructed regime measure.
-We have not verified this against ACS's full text directly (only via secondary summaries), so treat
-this as a specific, named open question rather than a settled critique — but it means this attempt
-should be read as "a vol/ambiguity-timing overlay in the spirit of the literature," not as a faithful
-implementation of ACS's specific mechanism.
+**Important attribution correction, confirmed via a follow-up literature check (two independent
+secondary academic sources, including an IDEAS/RePEc-sourced abstract of the paper's own findings):**
+ACS (2025)'s actual mechanism is an *interaction*, not a simple "reduce exposure when uncertain"
+rule. They find that high FX ambiguity is associated with *higher* carry returns, and specifically
+that high volatility predicts higher carry returns *only when* ambiguity is also high — high
+ambiguity is what keeps investors from acting on a volatility signal and unwinding their carry
+positions. It is *low*-ambiguity, high-volatility states they associate with unwind risk, not high
+ambiguity.
+
+This attempt's rule does the opposite: it goes **flat during high measured ambiguity/dispersion**.
+That means this overlay's exposure rule runs in the **opposite direction** from ACS's documented
+mechanism, despite using a similarly-constructed dispersion-based regime measure. This attempt should
+therefore be read as an independently-motivated vol/ambiguity-timing overlay that happens to perform
+well empirically on this sample — not a faithful implementation of ACS's specific mechanism. We have
+not read ACS's full primary text directly (SSRN and ScienceDirect blocked automated access), so the
+exact regression specification and robustness of their interaction claim is not independently
+confirmed here — but the directional claim itself is corroborated by two independent sources and
+should be treated as reasonably solid, not merely speculative.
 
 Attempt 3's robustness deep-dive found two specific weaknesses this is meant to address: subperiod
 instability (the entire OOS Sharpe came from 2022–2024; 2019–early 2021 including COVID was flat to
