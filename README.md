@@ -8,7 +8,7 @@ single headline number.
 
 ## TL;DR
 
-Four attempts, one strategy that meaningfully strengthened after a targeted improvement — but even
+Four attempts, one strategy that meaningfully strengthened after a targeted improvement, but even
 the best version falls short of a clean "holds up" verdict once tested rigorously enough.
 
 | Round | Strategy | In-sample Sharpe | Out-of-sample Sharpe | Verdict |
