@@ -2,7 +2,7 @@
 
 Independent replication of FX carry-trade alpha claims, tested with **free data**, a **frozen
 in-sample/out-of-sample split** (no tuning against OOS results), **realistic transaction costs**, and
-**statistical significance testing** — including robustness checks (cost sensitivity, distribution-aware
+**statistical significance testing**, including robustness checks (cost sensitivity, distribution-aware
 significance, factor decomposition, subperiod stability) on the most promising result, not just a
 single headline number.
 
